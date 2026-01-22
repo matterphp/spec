@@ -1,4 +1,4 @@
-# PHP Framework Specs
+# Matter Specification
 
 This repository contains the specifications for the framework: contracts, design documents,
 architecture notes, and decision records (RFCs/ADRs). It is the source of truth for

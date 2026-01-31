@@ -4,7 +4,7 @@ title: <Component> Contract
 status: draft | proposed | accepted | implemented
 last_updated: YYYY-MM-DD
 owners:
-  - @<handle>
+  - <handle>
 related:
   adrs: []
   rfcs: []

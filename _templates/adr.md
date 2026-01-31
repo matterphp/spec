@@ -4,7 +4,7 @@ title: <Decision Title>
 status: proposed | accepted | superseded
 date: YYYY-MM-DD
 deciders:
-  - @<handle>
+  - <handle>
 related:
   rfcs: [ ]
   components: [ ]

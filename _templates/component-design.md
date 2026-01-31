@@ -4,7 +4,7 @@ title: <Component> Design
 status: draft | proposed | accepted | implemented
 last_updated: YYYY-MM-DD
 owners:
-  - @<handle>
+  - <handle>
 related:
   contract: CMP-<COMPONENT>-CONTRACT
   adrs: [ ]

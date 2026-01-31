@@ -4,7 +4,7 @@ title: <RFC Title>
 status: draft | proposed | accepted | implemented | superseded
 created: YYYY-MM-DD
 authors:
-  - @<handle>
+  - <handle>
 reviewers: [ ]
 related:
   adrs: [ ]

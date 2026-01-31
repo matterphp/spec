@@ -32,6 +32,7 @@ ADRs are created when an RFC is accepted, and a decision must be recorded.
 
 Use the templates in `_templates/`:
 
+- `_templates/component-README.md`
 - `_templates/component-contract.md`
 - `_templates/component-design.md`
 - `_templates/rfc.md`

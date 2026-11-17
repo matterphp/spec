@@ -22,5 +22,7 @@ Readers are assumed to know PHP web development and at least one full-stack fram
 Concepts from that field are not explained and do not become glossary terms. Matter's own vocabulary is always a
 glossary term, linked at its first occurrence in each section.
 
-Nothing here is backfilled. Every document is written new, and agreed with the author section by section before it
-is written.
+Nothing here is backfilled. Earlier notes, including anything discussed or settled before this repository existed,
+are ideas to draw on rather than decisions to reconstruct: each decision is taken when its document is written, so
+every document is new and carries no Sources section. Each one is agreed with the author section by section before
+it is written.

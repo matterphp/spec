@@ -1,9 +1,9 @@
 ---
 id: ADR-0001
 title: Use third-party packages only where there is little choice
-status: proposed
+status: accepted
 created: 2026-11-18
-decided:
+decided: 2026-11-18
 depends: []
 updates: []
 obsoletes: []

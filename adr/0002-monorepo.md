@@ -1,9 +1,9 @@
 ---
 id: ADR-0002
 title: Develop Matter's packages in one monorepo and release them together
-status: proposed
+status: accepted
 created: 2026-11-18
-decided:
+decided: 2026-11-19
 depends: []
 updates: []
 obsoletes: []

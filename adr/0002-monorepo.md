@@ -1,6 +1,6 @@
 ---
 id: ADR-0002
-title: Develop every package in one monorepo and release them together
+title: Develop Matter's packages in one monorepo and release them together
 status: proposed
 created: 2026-11-18
 decided:
@@ -9,7 +9,7 @@ updates: []
 obsoletes: []
 ---
 
-# ADR-0002: Develop every package in one monorepo and release them together
+# ADR-0002: Develop Matter's packages in one monorepo and release them together
 
 ## Context
 
@@ -24,17 +24,18 @@ together.
 When packages are versioned independently, the combinations of sibling versions each package has to work with grow
 with every release.
 
-Inside a single repository, every package shares one autoloader. A package can use another package it never declared,
-such as a sibling or a library a sibling requires, and still work there, then fail when installed on its own.
+When packages are installed together, as they are in a monorepo, they share one autoloader. A package can use another
+package it never declared, such as a sibling or a library a sibling requires, and still work there, then fail when
+installed on its own.
 
 ## Decision
 
-I will keep every Matter package in one monorepo, each in its own directory under `packages/`. The repository root is
-the `matter/framework` package, which contains every other package and replaces it, so requiring it installs all of
-Matter. Each package under `packages/` is split out to a read-only repository of its own under the `matterphp` GitHub
-organisation and published from there, and changes are only ever made in the monorepo. Every package is released
-together, at one version number. Each package declares every other package it uses in its own `composer.json`,
-sibling or third-party, and a package that uses one it has not declared fails the monorepo's checks.
+I will keep Matter's packages in one monorepo, each in a directory of its own. A `matter/framework` package installs
+them together, so a project can require all of Matter at once. Each package that is published is split out to a
+repository of its own and published from there: the monorepo is the source of each package's code, and the split
+repositories only mirror it. Matter's packages are released together, at one version number. Each package declares
+every other package it uses in its own `composer.json`, such as a sibling or a third-party library, and a package
+that uses one it has not declared fails automated checks.
 
 ## Alternatives
 
@@ -53,18 +54,18 @@ manage.
 
 Easier:
 
-- A change across several packages will be one commit and one pull request, with every package tested together.
-- A project will be able to install only the packages it needs, or all of Matter through `matter/framework`.
+- Work across several packages will be one change, in one pull request, with every package tested together.
+- A project will be able to install only the packages it needs.
 - Each version number will identify one set of packages released and tested together.
 
 Harder:
 
 - Every package will get a new release whenever Matter does, even if it has not changed.
-- Contributions will have to go to the monorepo, because the read-only repositories will not accept them.
-- The monorepo will need tooling of its own to merge each package's `composer.json` into the root, split the packages
-  out and release them together.
+- A contribution made to a split repository will have to be moved to the monorepo before it can be accepted.
+- The monorepo will need tooling of its own to keep `matter/framework` in step with the other packages, split the
+  packages out and release them together.
 
 Constrained:
 
-- Every package will need to work when installed on its own.
+- Every package will need to work when installed with only the packages it declares.
 - A change that needs a new major version in one package will give every package a new major version.
